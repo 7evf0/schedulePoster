@@ -1,0 +1,64 @@
+// normal message response
+SmsMessageSid: 'SM8632a73d4d15757d9fa4a583cfd53e2b',
+  NumMedia: '0',
+  ProfileName: '!Tevfik Emre Sungur',
+  SmsSid: 'SM8632a73d4d15757d9fa4a583cfd53e2b',
+  WaId: '905535090172',
+  SmsStatus: 'received',
+  Body: 'Heyoo, ilk user initiated mesaj hayırlı olsun',
+  To: 'whatsapp:+905069140903',
+  MessagingServiceSid: 'MGff127650d2a834f635267f3a44f58678',
+  NumSegments: '1',
+  ReferralNumMedia: '0',
+  MessageSid: 'SM8632a73d4d15757d9fa4a583cfd53e2b',
+  AccountSid: 'AC559d04e74609be378cd60a229ab58dc6',
+  From: 'whatsapp:+905535090172',
+  ApiVersion: '2010-04-01'
+
+
+// list response
+[Object: null prototype] {
+  ListId: 'LAX96',
+  OriginalRepliedMessageSender: 'whatsapp:+905069140903',
+  SmsMessageSid: 'SMd707650113391a51c6b0a0c605d3ddce',
+  NumMedia: '0',
+  ProfileName: '!Tevfik Emre Sungur',
+  ListDescription: 'Owl Air Flight 96 to ORD',
+  SmsSid: 'SMd707650113391a51c6b0a0c605d3ddce',
+  WaId: '905535090172',
+  SmsStatus: 'received',
+  Body: 'LAX96',
+  To: 'whatsapp:+905069140903',
+  MessagingServiceSid: 'MGff127650d2a834f635267f3a44f58678',
+  ListTitle: 'LAX to Chicago for $199',
+  NumSegments: '1',
+  ReferralNumMedia: '0',
+  MessageSid: 'SMd707650113391a51c6b0a0c605d3ddce',
+  AccountSid: 'AC559d04e74609be378cd60a229ab58dc6',
+  OriginalRepliedMessageSid: 'MMe00c711a91daeb3a79314e5c9e9accf1',
+  From: 'whatsapp:+905535090172',
+  ApiVersion: '2010-04-01'
+}
+
+// quick reply response
+[Object: null prototype] {
+  OriginalRepliedMessageSender: 'whatsapp:+905069140903',
+  SmsMessageSid: 'SM95e1ebb90aeaa9521f43f87dce34f666',
+  NumMedia: '0',
+  ProfileName: '!Tevfik Emre Sungur',
+  SmsSid: 'SM95e1ebb90aeaa9521f43f87dce34f666',
+  WaId: '905535090172',
+  SmsStatus: 'received',
+  Body: 'Yes Ofc',
+  ButtonText: 'Yes Ofc',
+  To: 'whatsapp:+905069140903',
+  ButtonPayload: 'yes_ofc',
+  MessagingServiceSid: 'MGff127650d2a834f635267f3a44f58678',
+  NumSegments: '1',
+  ReferralNumMedia: '0',
+  MessageSid: 'SM95e1ebb90aeaa9521f43f87dce34f666',
+  AccountSid: 'AC559d04e74609be378cd60a229ab58dc6',
+  OriginalRepliedMessageSid: 'MMf8b6a63ccfa5fc1faf120f248fb1d253',
+  From: 'whatsapp:+905535090172',
+  ApiVersion: '2010-04-01'
+}
