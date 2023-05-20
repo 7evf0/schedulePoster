@@ -1,6 +1,23 @@
 require("dotenv").config();
 
+// DISCORDJS REQUIREMENTS
+const discord = require("discord.js");
+const {Client, EmbedBuilder} = discord;
+const dcClient = new Client({
+    intents:[
+        IntentsBitField.Flags.Guilds,
+        IntentsBitField.Flags.GuildVoiceStates,
+        IntentsBitField.Flags.GuildMessages,
+        IntentsBitField.Flags.GuildMessageTyping,
+        IntentsBitField.Flags.MessageContent
+    ]
+});
+dcClient.login(process.env.TOKEN);
+
+// WHATSAPP API REQUIREMENTS
 const client = require('twilio')(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN);
+
+// OTHER REQUIREMENTS
 const prompt = require('prompt-sync')();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -11,7 +28,6 @@ const returnMail = require("./emailTemplate.js");
 const returnAcceptHTML = require("./acceptHTML.js");
 
 //  REST API
-
 const App = express();
 
 App.use(cors({
@@ -55,7 +71,7 @@ async function respond(req){
     if(mediaType && mediaType === "image/jpeg"){
         const mediaUrl = req.MediaUrl0;
         await sendMessage("Thanks for uploading your schedule! You will get a notification when your schedule is confirmed.", userPhone);
-        await sendEmail(username, msg , mediaUrl, userPhone);
+        await sendDiscord(username, msg , mediaUrl);
     }
 };
 
@@ -69,6 +85,20 @@ async function sendMessage(msg, to){
                 to: to,
             });
 }
+
+async function sendDiscord(username, text=username, image=null){
+
+    const channel = dcClient.channels.cache.get(process.env.CHANNEL_ID);
+    const embed = new EmbedBuilder()
+        .setTitle(`Schedule of ${username}`)
+        .setAuthor({name: username})
+        .setDescription(text)
+        .setImage(image);
+
+    await channel.send({
+        embeds: [embed]
+    });
+};
 
 async function sendEmail(username, text=username, image=null, userPhone){
     var socket = nodemailer.createTransport({
