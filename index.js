@@ -2,7 +2,7 @@ require("dotenv").config();
 
 // DISCORDJS REQUIREMENTS
 const discord = require("discord.js");
-const {Client, EmbedBuilder} = discord;
+const {Client, EmbedBuilder, IntentsBitField} = discord;
 const dcClient = new Client({
     intents:[
         IntentsBitField.Flags.Guilds,
@@ -81,7 +81,7 @@ async function sendMessage(msg, to){
     await client.messages
             .create({
                 body: msg,
-                from: 'whatsapp:+14155238886',
+                from: process.env.MESSAGE_SERVICE_SID,
                 to: to,
             });
 }
